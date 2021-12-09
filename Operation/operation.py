@@ -1,12 +1,13 @@
 from Loader import OperationLoader
+var = []
 
 
 class Operation(OperationLoader):
-    def __init__(self, name, operand_1, operand_2):
+    def __init__(self, name, operand_1, operand_2=None):
         OperationLoader.__init__(self)
         self.name = name
         self.operand_1 = operand_1
-        self.operand_2 = operand_2
+        self.operand_2 = operand_2 or None
 
     def count(self):
         try:
@@ -18,6 +19,8 @@ class Operation(OperationLoader):
                 print(self.operand_1 * self.operand_2)
             elif self.name == 'DIV':
                 print(self.operand_1 / self.operand_2)
+            elif self.name == 'SET':
+                self.operand_1 = self.operand_2
         except ZeroDivisionError:
             print("\033[1;35mНа ноль делить нельзя\033[0m")
 
