@@ -1,3 +1,5 @@
+
+
 class OperationLoader:
     def __init__(self):
         try:
@@ -5,8 +7,8 @@ class OperationLoader:
             self.o_list = frase.split(' ')
             self.name = self.o_list[0]
             if self.name not in ("exit", "SET", "PRINT"):
-                self.operand_1 = float(self.o_list[1])
-                self.operand_2 = float(self.o_list[2])
+                self.operand_1 = self.o_list[1]
+                self.operand_2 = self.o_list[2]
             elif "exit" in frase:
                 self.name = "False"
             elif "SET" in frase:
