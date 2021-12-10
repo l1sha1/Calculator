@@ -8,7 +8,6 @@ def main():
     print("****** Калькулятор ******", "       Сложение - ADD",
           "       Вычитание - SUB", "       Умножение - MUL",
           "       Деление - DIV", "Выход - exit", sep="\n")
-    counter = 0
     while flag == 1:
         example = OperationLoader()
         try:
@@ -20,7 +19,6 @@ def main():
             continue
         except ZeroDivisionError:
             continue
-        counter += 1
 
 
 if __name__ == '__main__':
